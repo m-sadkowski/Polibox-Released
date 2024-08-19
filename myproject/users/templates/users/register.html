@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    REJESTRACJA
+{% endblock %}
+
+{% block content %}
+    <div class="user-pass-form">
+        <div class="form-container">
+            <form class="form-with-validation" action="/users/register/" method="post">
+                <h1 style="text-align: center;">Zarejestruj się</h1>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="submit-button">Zarejestruj się</button>
+            </form>
+            <img class="form-logo" src="/media/polibox.png" />
+        </div>
+    </div>
+{% endblock %}
+

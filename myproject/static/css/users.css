@@ -1,0 +1,86 @@
+.form-with-validation div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-with-validation label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-with-validation input,
+.form-with-validation select,
+.form-with-validation textarea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.form-with-validation input[type="email"],
+.form-with-validation input[type="password"] {
+    background-color: #2E2E2E;
+    color: whitesmoke;
+    border: 1px solid #555;
+}
+
+.form-with-validation input[type="email"]::placeholder,
+.form-with-validation input[type="password"]::placeholder {
+    color: #aaa;
+}
+
+.form-with-validation {
+    flex: 1;
+    font-size: 1rem;
+    color: whitesmoke;
+    background-color: #ff571a;
+    border-radius: 10px;
+    margin: 0 auto;
+    min-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.form-logo {
+    flex: 1;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.user-pass-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.form-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    max-width: 100%;
+}
+
+.helptext {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.helptext ul {
+    list-style-type: none;
+}
+
+.errorlist {
+    color: #F00;
+    margin-left: 2rem;
+}
+
+.errorlist li::marker {
+    content: '🚨 ';
+}

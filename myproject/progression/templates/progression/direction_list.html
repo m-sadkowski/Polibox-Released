@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Lista kierunków
+{% endblock %}
+
+{% block content %}
+  <div class="info-box">
+    <div class="info-content">
+      <h1>Kierunki</h1>
+      <ul>
+        {% for data in direction_data %}
+          <li>
+            {{ data.direction.name }}
+            <a href="{% url 'progression:subject_list' direction_slug=data.direction.slug %}">Zobacz przedmioty</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

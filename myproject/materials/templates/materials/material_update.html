@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Update Material
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="materials-form-box">
+            <div class="materials-form-container">
+                <form class="materials-form" method="post" enctype="multipart/form-data">
+                    <h1 style="text-align: center;">DODAJ MATERIAŁY DO {{ material.title }}</h1>
+                    {% csrf_token %}
+                    <label for="lectures_files">Pliki wykładowe:</label>
+                    <input type="file" name="lectures_files" multiple>
+                    <label for="classes_files">Pliki ćwiczeniowe:</label>
+                    <input type="file" name="classes_files" multiple>
+                    <label for="labs_files">Pliki laboratoryjne:</label>
+                    <input type="file" name="labs_files" multiple>
+                    <label for="projects_files">Pliki projektowe:</label>
+                    <input type="file" name="projects_files" multiple>
+                    <button class="submit-button" type="submit">ZAPISZ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

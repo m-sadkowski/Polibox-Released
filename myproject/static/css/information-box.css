@@ -1,0 +1,37 @@
+.info-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.info-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    max-width: 100%;
+}
+
+.info-content {
+    flex: 1;
+    font-size: 2rem;
+    color: whitesmoke;
+    padding: 2rem;
+    background-color: #ff571a;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.info-content ol li {
+    margin: 2rem;
+}
+
+.info-content ul li {
+    margin: 2rem;
+}
+
+.info-content a {
+    font-size: 2rem;
+    color: #2E2E2E;
+}
+

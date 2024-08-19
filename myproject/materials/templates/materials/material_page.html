@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ material.title }}
+{% endblock %}
+
+{% block content %}
+<section class="materials-section">
+    <h1>{{ material.title }}</h1>
+    <div class="button-container">
+        <button id="download-selected" class="btn" onclick="downloadSelected()">Pobierz wybrane</button>
+        <button id="download-all" class="btn" onclick="downloadAll()">Pobierz wszystko</button>
+    </div>
+    <p>{{ material.lectures }}</p>
+    <ul class="file-list">
+        {% for file in files %}
+            {% if file.category == 'lectures' %}
+                <li class="file-item">
+                    <input type="checkbox" class="file-checkbox" value="{{ file.file.url }}" data-filename="{{ file.get_filename }}">
+                    <a href="{{ file.file.url }}" download>
+                        <img src="{{ file.get_thumbnail_url }}" alt="{{ file.get_filename }}" class="file-thumbnail">
+                        {{ file.get_filename }}
+                    </a>
+                    {% if user.is_superuser %}
+                        <a href="{% url 'materials:delete-file' file.id %}" class="delete-button">Usuń</a>
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <p>{{ material.classes }}</p>
+    <ul class="file-list">
+        {% for file in files %}
+            {% if file.category == 'classes' %}
+                <li class="file-item">
+                    <input type="checkbox" class="file-checkbox" value="{{ file.file.url }}" data-filename="{{ file.get_filename }}">
+                    <a href="{{ file.file.url }}" download>
+                        <img src="{{ file.get_thumbnail_url }}" alt="{{ file.get_filename }}" class="file-thumbnail">
+                        {{ file.get_filename }}
+                    </a>
+                    {% if user.is_superuser %}
+                        <a href="{% url 'materials:delete-file' file.id %}" class="delete-button">Usuń</a>
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <p>{{ material.labs }}</p>
+    <ul class="file-list">
+        {% for file in files %}
+            {% if file.category == 'labs' %}
+                <li class="file-item">
+                    <input type="checkbox" class="file-checkbox" value="{{ file.file.url }}" data-filename="{{ file.get_filename }}">
+                    <a href="{{ file.file.url }}" download>
+                        <img src="{{ file.get_thumbnail_url }}" alt="{{ file.get_filename }}" class="file-thumbnail">
+                        {{ file.get_filename }}
+                    </a>
+                    {% if user.is_superuser %}
+                        <a href="{% url 'materials:delete-file' file.id %}" class="delete-button">Usuń</a>
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <p>{{ material.projects }}</p>
+    <ul class="file-list">
+        {% for file in files %}
+            {% if file.category == 'projects' %}
+                <li class="file-item">
+                    <input type="checkbox" class="file-checkbox" value="{{ file.file.url }}" data-filename="{{ file.get_filename }}">
+                    <a href="{{ file.file.url }}" download>
+                        <img src="{{ file.get_thumbnail_url }}" alt="{{ file.get_filename }}" class="file-thumbnail">
+                        {{ file.get_filename }}
+                    </a>
+                    {% if user.is_superuser %}
+                        <a href="{% url 'materials:delete-file' file.id %}" class="delete-button">Usuń</a>
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <p>{{ material.date }}</p>
+    {% if user.is_superuser %}
+        <form action="{% url 'materials:delete-material' material.slug %}" method="post" class="inline-form">
+            {% csrf_token %}
+            <a href="{% url 'materials:update-material' material.slug %}" class="btn ">Dodaj Materiały</a>
+            <button type="submit" class="btn btn-danger">Usuń Przedmiot</button>
+        </form>
+    {% endif %}
+</section>
+{% endblock %}

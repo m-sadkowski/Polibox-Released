@@ -1,0 +1,72 @@
+.generator-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.generator-content {
+    padding: 2rem;
+    background-color: #ff571a;
+    border-radius: 10px;
+    min-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.generator-content h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.generator-content label {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.generator-content textarea {
+    background-color: #2E2E2E;
+    border: 1px solid #ff571a;
+    border-radius: 10px;
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    height: 5rem;
+    text-align: center;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.generator-content textarea {
+    resize: none;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #2E2E2E;
+    border: 1px solid #ff571a;
+    border-radius: 10px;
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    min-height: 4rem;
+    padding: 1rem;
+}
+
+/* Style the opened dropdown */
+.select2-container--open .select2-dropdown--below {
+    background-color: #2E2E2E; /* Background color */
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+}
+
+/* Style the dropdown options */
+.select2-container--default .select2-results__option {
+    background-color: #2E2E2E; /* Background color */
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+}
+

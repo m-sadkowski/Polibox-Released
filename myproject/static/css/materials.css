@@ -1,0 +1,107 @@
+/* materials.css */
+.materials-section {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #3c3c3c; /* Dostosowanie do tła strony */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    color: whitesmoke; /* Kolor tekstu zgodny z ogólnym zamysłem */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: whitesmoke; /* Kolor tekstu zgodny z ogólnym zamysłem */
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2rem; /* Zwiększenie czcionki przycisków */
+    color: whitesmoke; /* Biały tekst dla przycisków */
+    background-color: #ff571a; /* Kolor przycisków dostosowany do ciemnego tła */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #cc4715;
+}
+
+.btn-danger {
+    background-color: #e60000;
+}
+
+.btn-danger:hover {
+    background-color: #cc0000;
+}
+
+.file-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex; /* Ustawienie elementów obok siebie */
+    flex-wrap: wrap; /* Dostosowanie do szerokości sekcji */
+    gap: 10px; /* Odstępy między elementami */
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #505050; /* Kolor tła plików dostosowany do ciemnego motywu */
+    border: 1px solid #666;
+    border-radius: 5px;
+    flex: 1 1 calc(25% - 20px); /* Ustawienie szerokości elementu */
+}
+
+.file-item a {
+    text-decoration: none;
+    color: #00ccff; /* Jaśniejszy kolor linków dla lepszej czytelności */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    font-size: 1.2rem; /* Zwiększenie rozmiaru czcionki */
+}
+
+.file-item a:hover {
+    color: #0099cc;
+}
+
+.file-checkbox {
+    margin-right: 10px;
+}
+
+.file-thumbnail {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.delete-button {
+    margin-left: auto;
+    color: #e60000; /* Kolor przycisku usuwania dostosowany do ogólnego zamysłu */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.delete-button:hover {
+    opacity: 0.6; /* Dostosowanie efektu hover do ogólnego zamysłu */
+}
+
+.inline-form {
+    display: inline;
+}

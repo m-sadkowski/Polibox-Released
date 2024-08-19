@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Lista przedmiotów
+{% endblock %}
+
+{% block content %}
+    <div class="direction-box">
+      <h1>{{ direction.name }}</h1>
+      {% for semester, data in subjects_by_semester.items %}
+        <div class="semester-box">
+          <h2>Semestr {{ semester }}</h2>
+          <div class="semester-content">
+            <ul class="subject-list">
+              {% for subject_data in data.subjects %}
+                <li>{{ subject_data.subject.name }}</li>
+              {% endfor %}
+            </ul>
+            <ul class="progress-list">
+              {% for subject_data in data.subjects %}
+                <li>
+                  {{ subject_data.completion_percentage }}%
+                  <a href="{% url 'progression:subject_detail' direction_slug=direction.slug subject_slug=subject_data.subject.slug %}">Sprawdź szczegóły</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+{% endblock %}

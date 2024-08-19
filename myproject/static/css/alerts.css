@@ -1,0 +1,14 @@
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.messages .alert {
+    animation: fadeOut 5s forwards;
+    text-align: center;
+    font-size: 2rem;
+    color: gray;
+    margin: 1rem;
+}

@@ -1,0 +1,54 @@
+.direction-box {
+    flex: 1;
+    font-size: 2rem;
+    color: whitesmoke;
+    padding: 3rem;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.semester-box {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: #ff571a;
+    border-radius: 10px;
+}
+
+.semester-box h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.semester-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.subject-list,
+.progress-list {
+    list-style-type: none;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.progress-list {
+    text-align: right;
+}
+
+.subject-list li,
+.progress-list li {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ffffff;
+}
+
+.progress-list a {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+.progress-list a:hover {
+    text-decoration: none;
+    color: #ffe0b2;
+}

@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    GENERATOR
+{% endblock %}
+
+{% block content %}
+    <div class="generator-box">
+        <div class="generator-container">
+            <div class="generator-content">
+                <h1 style="text-align: center;">GENERATOR EMAIL</h1>
+                <label for="person-select">Wybierz osobę:</label>
+                <select id="person-select" class="js-example-basic-single" style="width: 300px;">
+                    {% for person in people %}
+                        <option value="{{ person.id }}">{{ person.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <br>
+
+                <label for="greeting-text">Tekst powitania:</label><br>
+                <textarea id="greeting-text" rows="4" cols="50" readonly></textarea>
+
+                <br>
+
+                <label for="mail-text">Email:</label><br>
+                <textarea id="mail-text" rows="4" cols="50" readonly></textarea>
+                <br>
+
+                <button class="submit-button" onclick="generateGreeting(); generateMail()">Generuj</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

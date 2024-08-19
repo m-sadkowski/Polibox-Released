@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Szczegóły przedmiotu
+{% endblock %}
+
+{% block content %}
+  <div class="info-box">
+    <div class="info-content">
+      <h1>{{ subject.name }}</h1>
+      <h2>Progres: {{ subject_completion_percentage }}%</h2>
+      <form method="post" action="{% url 'progression:update_progress' direction_slug=subject.direction.slug subject_slug=subject.slug %}">
+        {% csrf_token %}
+        <ul>
+          {% for data in progress_data %}
+            <li>
+              {{ data.element.name }}: {{ data.progress_percentage }}%
+              <div>
+                <label for="completed_fragments_{{ data.element.id }}">Zaliczone fragmenty: </label>
+                <input type="number" id="completed_fragments_{{ data.element.id }}" name="completed_fragments_{{ data.element.id }}" value="{% if data.progress %}{{ data.progress.completed_fragments }}{% else %}0{% endif %}">
+                /
+                <label for="total_fragments_{{ data.element.id }}">Ilość fragmentów: </label>
+                <input type="number" id="total_fragments_{{ data.element.id }}" name="total_fragments_{{ data.element.id }}" value="{% if data.progress %}{{ data.progress.total_fragments }}{% else %}1{% endif %}">
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        <button type="submit">Zaktualizuj</button>
+      </form>
+      <a href="{% url 'progression:subject_list' direction_slug=subject.direction.slug %}">Powrót do listy przedmiotów</a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'gallery-layout.html' %}
+
+{% block title %}
+    Posts
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>MATERIAŁY</h1>
+        <div class="container">
+            <div class="search-box">
+                <input type="text" placeholder="WPISZ NAZWĘ PRZEDMIOTU">
+            </div>
+            <div class="subjects">
+                {% for material in materials %}
+                   <a href="{% url 'materials:page' slug=material.slug %}">
+                       <button class="subject-box" data-name="{{ material.title }}">
+                           {{ material.title }}
+                       </button>
+                   </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

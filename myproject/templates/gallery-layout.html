@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>
+        {% block title %}
+            Polibox
+        {% endblock %}
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/gallery-style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/information-box.css' %}">
+    <!-- JavaScript -->
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <!-- icon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+</head>
+<body>
+    <nav>
+        <!-- Navbar with all subsites, register/login/logout buttons -->
+        <div class="navbar-brand">
+            <a href="/">
+                <span class="navlink" role="img" aria-label="Home" title="STRONA GŁÓWNA"><img id="logo" src="/media/polibox.png"/></span>
+            </a>
+            <span class="navbar-toggle" aria-label="Toggle navigation">&#9776;</span>
+        </div>
+        <div class="navbar-links">
+            <a href="/about">
+                <span class="navlink" role="img" aria-label="About" title="INFORMACJE">INFORMACJE</span>
+            </a>
+            {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                    <a href="{% url 'materials:new-material' %}">
+                        <span class="navlink" role="img" aria-label="Dodaj Materiały" title="DODAJ MATERIAŁY">DODAJ MATERIAŁY</span>
+                    </a>
+                {% endif %}
+                <a href="{% url 'materials:list' %}">
+                    <span class="navlink" role="img" aria-label="Materials" title="MATERIAŁY">MATERIAŁY</span>
+                </a>
+                <a href="{% url 'generator:generator' %}">
+                    <span class="navlink" role="img" aria-label="Generator" title="GENERATOR">GENERATOR</span>
+                </a>
+                <a href="{% url 'mycalendar:calendar' %}">
+                    <span class="navlink" role="img" aria-label="Kalendarz" title="KALENDARZ">KALENDARZ</span>
+                </a>
+                <a href="{% url 'progression:direction_list' %}">
+                    <span class="navlink" role="img" aria-label="Postęp" title="PROGRES">PROGRES</span>
+                </a>
+            {% endif %}
+            <div class="auth-links">
+                {% if user.is_authenticated %}
+                    <form class="logout" action="{% url 'users:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button class="nav-logout-button" aria-label="User Logout" title="WYLOGUJ SIĘ">{{ user.username }} WYLOGUJ SIĘ</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'users:register' %}">
+                        <span class="navlink" role="img" aria-label="User Registration" title="REJESTRACJA">REJESTRACJA</span>
+                    </a>
+                    <a href="{% url 'users:login' %}">
+                        <span class="navlink" role="img" aria-label="User Login" title="LOGOWANIE">LOGOWANIE</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Main content -->
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    <footer>
+        <!-- Footer with alerts -->
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <p>&copy; 2024 Polibox</p>
+    </footer>
+</body>
+</html>

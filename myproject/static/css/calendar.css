@@ -1,0 +1,82 @@
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #2E2E2E;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    width: 14.28%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+}
+
+th {
+    background-color: #1E1E1E;
+    color: whitesmoke;
+    font-weight: normal;
+}
+
+td {
+    height: 100px;
+    position: relative;
+    color: lightgrey;
+}
+
+td div {
+    color: white;
+    padding: 5px;
+    margin: 2px 0;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.event {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+.event:hover {
+    background-color: #ff571a;
+}
+
+h1 {
+    text-align: center;
+    padding: 2rem;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation button {
+    background-color: #ff571a;
+    color: whitesmoke;
+    padding: 1rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.navigation a {
+    color: whitesmoke;
+}
+
+.navigation button:hover {
+    opacity: 0.6;
+}
+
+.current-date {
+  background-color: #ff571a;
+}
+
