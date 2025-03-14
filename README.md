@@ -84,8 +84,6 @@ Contributions are welcome! If you would like to contribute to this project, plea
     ```
 5. Open a pull request.
 
-Please ensure your code adheres to the existing style and includes appropriate tests.
-
 ## License
 
 This project is licensed under the BSD-2 License. See the [LICENSE](LICENSE) file for more details.
