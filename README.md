@@ -2,7 +2,7 @@
 
 # POLIBOX
 
-POLIBOX is a comprehensive platform designed to assist students of Universities of Technology. This project, built using Django, provides various resources and tools to facilitate the academic journey of students. The backend is almost ready, needing more security and some small improvements. The frontend should be redesigned, but I am not really into it.
+POLIBOX is a comprehensive platform designed to assist students of Universities of Technology. This project, built using Django, provides various resources and tools to facilitate the academic journey of students. The backend is almost ready, needing more security and some small improvements.
 
 ## Table of Contents
 
@@ -67,7 +67,7 @@ Once the server is running, you can access the application at `http://127.0.0.1:
 
 ## Contributing
 
-Contributions are welcome! If you would like to contribute to this project, please follow these steps:
+Contributions are welcome! Especially frontend! If you would like to contribute to this project, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch:
